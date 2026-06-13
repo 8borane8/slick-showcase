@@ -21,7 +21,7 @@
 	},
 
 	"deploy": {
-		"install": "deno install --node-modules-dir=auto",
+		"install": "npm install",
 		"runtime": {
 			"type": "dynamic",
 			"entrypoint": "./src/index.ts",
