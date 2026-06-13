@@ -3,9 +3,7 @@
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"start": "deno run --allow-all ./src/index.ts",
-		"dev": "deno run --watch --allow-all ./src/index.ts --no-cache",
-		"install": "deno install --node-modules-dir=auto",
-		"cache": "deno cache --node-modules-dir=auto ./src/index.ts"
+		"dev": "deno run --watch --allow-all ./src/index.ts --no-cache"
 	},
 
 	"imports": {
@@ -23,8 +21,7 @@
 	},
 
 	"deploy": {
-		"install": "deno task install",
-		"build": "deno task cache",
+		"install": "npm install",
 		"runtime": {
 			"type": "dynamic",
 			"entrypoint": "./src/index.ts",
