@@ -1,5 +1,5 @@
 {
-	"lock": true,
+	"lock": false,
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"start": "deno run --allow-all ./src/index.ts",
@@ -21,7 +21,7 @@
 	},
 
 	"deploy": {
-		"install": "npm install",
+		"install": "deno install --node-modules-dir=auto",
 		"runtime": {
 			"type": "dynamic",
 			"entrypoint": "./src/index.ts",
