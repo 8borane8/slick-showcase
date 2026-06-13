@@ -1,0 +1,131 @@
+.about-content {
+	padding-top: 56px;
+}
+
+.about-block h2 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	margin-bottom: 14px;
+}
+
+.about-block p {
+	color: var(--text-muted);
+	line-height: 1.75;
+	margin-bottom: 14px;
+	font-size: 0.95rem;
+}
+
+.about-block p:last-child {
+	margin-bottom: 0;
+}
+
+.values-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 28px;
+}
+
+.value-item {
+	display: flex;
+	gap: 16px;
+	padding: 18px 20px;
+	border-radius: var(--radius);
+}
+
+.value-num {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: var(--accent-light);
+	flex-shrink: 0;
+	width: 26px;
+	height: 26px;
+	display: grid;
+	place-items: center;
+	background: var(--accent-soft);
+	border-radius: 6px;
+}
+
+.value-item h3 {
+	font-size: 0.9rem;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.value-item p {
+	font-size: 0.84rem;
+	color: var(--text-muted);
+	margin: 0;
+	line-height: 1.6;
+}
+
+.timeline {
+	padding-left: 24px;
+	border-left: 1px solid var(--border);
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.timeline-item {
+	position: relative;
+	padding-left: 8px;
+}
+
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: -29px;
+	top: 6px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--accent);
+}
+
+.timeline-item h3 {
+	font-size: 0.92rem;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.timeline-item p {
+	font-size: 0.86rem;
+	color: var(--text-muted);
+	line-height: 1.65;
+}
+
+.quote-block {
+	padding: 32px 36px;
+	background: var(--bg-card);
+	border: 1px solid var(--border);
+	border-left: 2px solid var(--accent);
+	border-radius: var(--radius-lg);
+	margin-top: 56px;
+}
+
+.quote-block blockquote {
+	font-size: 1.05rem;
+	color: var(--text);
+	line-height: 1.7;
+	margin-bottom: 12px;
+}
+
+.quote-block cite {
+	font-size: 0.82rem;
+	color: var(--text-subtle);
+	font-style: normal;
+	font-family: var(--font-mono);
+}
+
+.about-grid + .about-grid {
+	margin-top: 72px;
+}
+
+@media (max-width: 800px) {
+	.about-grid {
+		gap: 36px;
+	}
+}
