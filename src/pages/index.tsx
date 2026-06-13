@@ -33,7 +33,7 @@ export default {
 		</>
 	),
 
-	body: (
+	body: () => (
 		<>
 			<section class="hero">
 				<div class="container hero-grid">
