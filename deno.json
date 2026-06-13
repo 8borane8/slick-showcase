@@ -2,10 +2,10 @@
 	"lock": true,
 	"nodeModulesDir": "auto",
 	"tasks": {
-		"dev": "deno run --watch=src,main.ts --allow-all --node-modules-dir=auto ./main.ts --no-cache",
-		"start": "deno run --allow-all --node-modules-dir=auto ./main.ts",
+		"start": "deno run --allow-all ./src/index.ts",
+		"dev": "deno run --watch --allow-all ./src/index.ts --no-cache",
 		"install": "deno install --node-modules-dir=auto",
-		"cache": "deno cache --node-modules-dir=auto ./main.ts"
+		"cache": "deno cache --node-modules-dir=auto ./src/index.ts"
 	},
 
 	"imports": {
@@ -19,12 +19,7 @@
 		"preact-root-fragment": "npm:preact-root-fragment@^0.3.1",
 		"@preact/signals": "npm:@preact/signals@^2.9.1",
 
-		"shiki": "npm:shiki@^4.2.0"
-	},
-
-	"compilerOptions": {
-		"jsxImportSource": "preact",
-		"jsx": "react-jsx"
+		"shiki": "npm:shiki@^3.23.0"
 	},
 
 	"deploy": {
@@ -32,9 +27,14 @@
 		"build": "deno task cache",
 		"runtime": {
 			"type": "dynamic",
-			"entrypoint": "main.ts",
+			"entrypoint": "./src/index.ts",
 			"memory_limit": 1024
 		}
+	},
+
+	"compilerOptions": {
+		"jsxImportSource": "preact",
+		"jsx": "react-jsx"
 	},
 
 	"fmt": {
