@@ -2,10 +2,10 @@
 	"lock": true,
 	"nodeModulesDir": "auto",
 	"tasks": {
-		"dev": "deno run --watch=src --allow-all --node-modules-dir=auto ./src/index.ts --no-cache",
-		"start": "deno run --allow-all --node-modules-dir=auto ./src/index.ts",
+		"dev": "deno run --watch=src,main.ts --allow-all --node-modules-dir=auto ./main.ts --no-cache",
+		"start": "deno run --allow-all --node-modules-dir=auto ./main.ts",
 		"install": "deno install --node-modules-dir=auto",
-		"cache": "deno cache --node-modules-dir=auto ./src/index.ts"
+		"cache": "deno cache --node-modules-dir=auto ./main.ts"
 	},
 
 	"imports": {
@@ -19,7 +19,7 @@
 		"preact-root-fragment": "npm:preact-root-fragment@^0.3.1",
 		"@preact/signals": "npm:@preact/signals@^2.9.1",
 
-		"shiki": "npm:shiki@^3.23.0"
+		"shiki": "npm:shiki@^4.2.0"
 	},
 
 	"compilerOptions": {
@@ -28,12 +28,12 @@
 	},
 
 	"deploy": {
-		"install": "deno install --node-modules-dir=auto",
-		"build": "deno cache --node-modules-dir=auto ./src/index.ts",
+		"install": "deno task install",
+		"build": "deno task cache",
 		"runtime": {
 			"type": "dynamic",
-			"entrypoint": "./src/index.ts",
-			"cwd": "."
+			"entrypoint": "main.ts",
+			"memory_limit": 1024
 		}
 	},
 

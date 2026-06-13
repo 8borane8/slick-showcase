@@ -6,13 +6,14 @@
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/path@^1.1.5": "1.1.5",
     "jsr:@webtools/expressapi@~0.8.1": "0.8.1",
+    "jsr:@webtools/slick-client@0.3": "0.3.0",
     "jsr:@webtools/slick-server@~0.6.11": "0.6.11",
     "npm:@preact/signals@^2.9.1": "2.9.1_preact@10.29.2",
     "npm:esbuild@~0.28.1": "0.28.1",
     "npm:preact-render-to-string@^6.7.0": "6.7.0_preact@10.29.2",
     "npm:preact-root-fragment@~0.3.1": "0.3.1_preact@10.29.2",
     "npm:preact@^10.29.2": "10.29.2",
-    "npm:shiki@^3.23.0": "3.23.0"
+    "npm:shiki@^4.2.0": "4.2.0"
   },
   "jsr": {
     "@std/fs@1.0.24": {
@@ -39,6 +40,9 @@
       "dependencies": [
         "jsr:@std/media-types"
       ]
+    },
+    "@webtools/slick-client@0.3.0": {
+      "integrity": "fe720e32d4da93fb424cb7d23276d4e57c91c881349959e1e3275fdcf285824c"
     },
     "@webtools/slick-server@0.6.11": {
       "integrity": "14466e8ad63f535fcc3a8cfccffa4e4b48129908e9a2911e9045984045daedfc",
@@ -193,44 +197,53 @@
         "preact"
       ]
     },
-    "@shikijs/core@3.23.0": {
-      "integrity": "sha512-NSWQz0riNb67xthdm5br6lAkvpDJRTgB36fxlo37ZzM2yq0PQFFzbd8psqC2XMPgCzo1fW6cVi18+ArJ44wqgA==",
+    "@shikijs/core@4.2.0": {
+      "integrity": "sha512-Hc87Ab1Ld/vEbZRCbwx344I5v+4RU8CVToUTRkqXL1+TjbuOp9U5Xa0M23V4GEWHxVn+yO5otb+HkQVm3ptWQQ==",
       "dependencies": [
+        "@shikijs/primitive",
         "@shikijs/types",
         "@shikijs/vscode-textmate",
         "@types/hast",
         "hast-util-to-html"
       ]
     },
-    "@shikijs/engine-javascript@3.23.0": {
-      "integrity": "sha512-aHt9eiGFobmWR5uqJUViySI1bHMqrAgamWE1TYSUoftkAeCCAiGawPMwM+VCadylQtF4V3VNOZ5LmfItH5f3yA==",
+    "@shikijs/engine-javascript@4.2.0": {
+      "integrity": "sha512-fjETeq1k5ffyXqRgS6+3hpvqseLalp1kjNfRbXpUgWR8FpZ1CmQfiNHovc5lncYjt/Vg5JK/WJEmLahjwMa0og==",
       "dependencies": [
         "@shikijs/types",
         "@shikijs/vscode-textmate",
         "oniguruma-to-es"
       ]
     },
-    "@shikijs/engine-oniguruma@3.23.0": {
-      "integrity": "sha512-1nWINwKXxKKLqPibT5f4pAFLej9oZzQTsby8942OTlsJzOBZ0MWKiwzMsd+jhzu8YPCHAswGnnN1YtQfirL35g==",
+    "@shikijs/engine-oniguruma@4.2.0": {
+      "integrity": "sha512-hTorK1dffPkpbMUk6Z+828PgRo7d07HbnizoP0hNPFjhxMHctj0Px/qoHeGMYafc6ju+u9iMldN4JbVzNQM++g==",
       "dependencies": [
         "@shikijs/types",
         "@shikijs/vscode-textmate"
       ]
     },
-    "@shikijs/langs@3.23.0": {
-      "integrity": "sha512-2Ep4W3Re5aB1/62RSYQInK9mM3HsLeB91cHqznAJMuylqjzNVAVCMnNWRHFtcNHXsoNRayP9z1qj4Sq3nMqYXg==",
+    "@shikijs/langs@4.2.0": {
+      "integrity": "sha512-bwrVRlJ0wUhZxAbVdvBbv2TTC9yLsh4C/IO5Ofz0T8MQntgDvyVnkbjw9vi50r1kx7RCIJdnJnjZAwmAsXFLZQ==",
       "dependencies": [
         "@shikijs/types"
       ]
     },
-    "@shikijs/themes@3.23.0": {
-      "integrity": "sha512-5qySYa1ZgAT18HR/ypENL9cUSGOeI2x+4IvYJu4JgVJdizn6kG4ia5Q1jDEOi7gTbN4RbuYtmHh0W3eccOrjMA==",
+    "@shikijs/primitive@4.2.0": {
+      "integrity": "sha512-NOq+DtUkVBJtZMVXL5A0vI0Xk8nvDYaXetFHSJFlOqjDZIVhIPRYFdGkSoElDqNuegikcc3A76SNUa8dTqtAYA==",
+      "dependencies": [
+        "@shikijs/types",
+        "@shikijs/vscode-textmate",
+        "@types/hast"
+      ]
+    },
+    "@shikijs/themes@4.2.0": {
+      "integrity": "sha512-RX8IHYeLv8Cu2W6ruc3RxUqWn0IYCqSrMBzi/uRGAmfyDNOnNO5BF/Px7o97n4XTpmFTo5GbRaazuOWj+2ak2w==",
       "dependencies": [
         "@shikijs/types"
       ]
     },
-    "@shikijs/types@3.23.0": {
-      "integrity": "sha512-3JZ5HXOZfYjsYSk0yPwBrkupyYSLpAE26Qc0HLghhZNGTZg/SKxXIIgoxOpmmeQP0RRSDJTk1/vPfw9tbw+jSQ==",
+    "@shikijs/types@4.2.0": {
+      "integrity": "sha512-VT/MKtlpOhEPZloSH3Pb9WCZEBDoQVMa9jedp5UAwmJOar1DVc9DRODAxmYPW9M93IK4ryuqRejFfmlvlVDemw==",
       "dependencies": [
         "@shikijs/vscode-textmate",
         "@types/hast"
@@ -418,8 +431,8 @@
         "regex-utilities"
       ]
     },
-    "shiki@3.23.0": {
-      "integrity": "sha512-55Dj73uq9ZXL5zyeRPzHQsK7Nbyt6Y10k5s7OjuFZGMhpp4r/rsLBH0o/0fstIzX1Lep9VxefWljK/SKCzygIA==",
+    "shiki@4.2.0": {
+      "integrity": "sha512-hjNax6o/ylDy9lefQEaSDtzaT3iVNtZ3WmpQnbuQNoG4xvnSKf2kSKbihZVO4JRG1TTMejs7CmNRYlWgAL66pQ==",
       "dependencies": [
         "@shikijs/core",
         "@shikijs/engine-javascript",
@@ -503,7 +516,7 @@
       "npm:@preact/signals@^2.9.1",
       "npm:preact-root-fragment@~0.3.1",
       "npm:preact@^10.29.2",
-      "npm:shiki@^3.23.0"
+      "npm:shiki@^4.2.0"
     ]
   }
 }
