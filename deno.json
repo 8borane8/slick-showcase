@@ -1,13 +1,12 @@
 {
 	"lock": false,
-	"nodeModulesDir": "auto",
 	"tasks": {
 		"start": "deno run --allow-all ./src/index.ts",
 		"dev": "deno run --watch --allow-all ./src/index.ts --no-cache"
 	},
 
 	"imports": {
-		"@webtools/slick-server": "jsr:@webtools/slick-server@^0.6.11",
+		"@webtools/slick-server": "jsr:@webtools/slick-server@^0.6.12",
 		"@webtools/slick-client": "jsr:@webtools/slick-client@^0.3.0",
 		"@webtools/expressapi": "jsr:@webtools/expressapi@^0.8.1",
 
@@ -21,7 +20,6 @@
 	},
 
 	"deploy": {
-		"install": "npm install",
 		"runtime": {
 			"type": "dynamic",
 			"entrypoint": "./src/index.ts"
