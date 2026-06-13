@@ -449,12 +449,26 @@ body {
 	.grid-2--about {
 		grid-template-columns: 1fr;
 	}
-	.site-nav .nav-link-text {
+
+	.header-inner {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	.site-nav {
 		display: none;
 	}
 
 	.header-actions .btn-ghost {
 		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.header-actions .btn-sm {
+		padding: 7px 10px;
+		font-size: 0.75rem;
 	}
 }
 

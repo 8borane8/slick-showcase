@@ -52,7 +52,7 @@ export default {
 				</div>
 			</section>
 
-			<section class="section section--end">
+			<section class="section section--end section--islands">
 				<div class="container">
 					<div class="grid-2 islands-layout">
 						{DEMOS.map(({ wide, node }, i) => (

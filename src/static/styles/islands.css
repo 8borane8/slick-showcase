@@ -1,5 +1,9 @@
+.section--islands {
+	padding-top: 48px;
+}
+
 .islands-layout {
-	margin-top: 40px;
+	margin-top: 0;
 }
 
 .island-card {
