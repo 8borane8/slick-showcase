@@ -69,7 +69,12 @@ export default {
 
 			<footer class="site-footer">
 				<div class="footer-inner">
+					<div class="footer-brand">
+						<img src="/favicon.svg" alt="" class="logo-icon" width="24" height="24" />
+						<span>Slick</span>
+					</div>
 					<p class="footer-made">Made with ❤️</p>
+					<p class="footer-copy">MIT · Deno · Web Standards</p>
 				</div>
 			</footer>
 		</>
