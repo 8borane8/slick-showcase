@@ -53,12 +53,7 @@ export default {
 						>
 							GitHub
 						</a>
-						<a
-							href="https://github.com/8borane8/webtools-slick-server#quick-start"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="btn btn-primary btn-sm"
-						>
+						<a href="/#get-started" class="btn btn-primary btn-sm">
 							Get started
 						</a>
 					</div>

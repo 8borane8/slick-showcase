@@ -1,10 +1,12 @@
 import type { Page } from "@webtools/slick-server";
 import { getCodeSample } from "../utils/code-samples.ts";
-import { CodeBlock, PageFooter, Ticker } from "../components/ui.tsx";
+import { CodeBlock, Ticker } from "../components/ui.tsx";
 import { getIslandSources } from "../utils/island-sources.ts";
 import Counter from "../islands/Counter.tsx";
+import CopyCommand from "../islands/CopyCommand.tsx";
 
 const src = getIslandSources();
+const INIT_CMD = "deno run -Ar jsr:@webtools/init";
 
 const weather = {
 	city: "Paris",
@@ -48,17 +50,10 @@ export default {
 						</p>
 
 						<div class="hero-actions">
-							<a
-								href="https://github.com/8borane8/webtools-slick-server#quick-start"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="btn btn-primary"
-							>
+							<a href="#get-started" class="btn btn-primary">
 								Get started
 							</a>
-							<a href="/islands" class="btn btn-ghost">
-								See islands
-							</a>
+							<CopyCommand command={INIT_CMD} />
 						</div>
 
 						<div class="hero-meta">
@@ -229,13 +224,24 @@ export default {
 				</div>
 			</section>
 
-			<section class="section section--end">
+			<section class="section">
 				<div class="container">
 					<span class="section-label">Quick start</span>
-					<h2 class="section-title">A real project layout.</h2>
-					<p class="section-desc" style="margin-bottom: 32px;">
-						Three required folders, one server file, and optional islands. Your structure is the config.
+					<h2 class="section-title">What you get out of the box.</h2>
+					<p class="section-desc">
+						<a
+							href="https://github.com/8borane8/webtools-init"
+							target="_blank"
+							rel="noopener noreferrer"
+							style="color: var(--accent-light);"
+						>
+							Webtools Init
+						</a>{" "}
+						scaffolds a ready-to-run Slick app with pages, templates, islands, and static assets wired up
+						from the start.
 					</p>
+
+					<p class="quickstart-sub">Generated project layout:</p>
 
 					<CodeBlock filename="project layout" html={getCodeSample("projectLayout")} />
 
@@ -243,13 +249,35 @@ export default {
 						<CodeBlock filename="templates/app.tsx" html={getCodeSample("templateApp")} />
 						<CodeBlock filename="pages/index.tsx" html={getCodeSample("pageIndex")} />
 					</div>
+				</div>
+			</section>
 
-					<PageFooter href="/islands" label="Explore islands →">
-						<div class="install-cmd">
-							<span class="prompt">$</span>
-							<code>deno add jsr:@webtools/slick-server jsr:@webtools/slick-client</code>
+			<section id="get-started" class="cta-section section--end">
+				<div class="container">
+					<div class="cta-card">
+						<span class="section-label">Get started</span>
+						<h2 class="cta-title">Start your next project in seconds.</h2>
+						<p class="cta-desc">
+							Webtools Init walks you through setup, whether you want a frontend-only app or a full-stack
+							monorepo with ExpressAPI, database, and mailer. No install, runs straight from JSR.
+						</p>
+
+						<CopyCommand command={INIT_CMD} />
+
+						<div class="cta-actions">
+							<a
+								href="https://github.com/8borane8/webtools-init"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="btn btn-ghost"
+							>
+								View on GitHub →
+							</a>
+							<a href="/islands" class="btn btn-ghost">
+								Explore islands →
+							</a>
 						</div>
-					</PageFooter>
+					</div>
 				</div>
 			</section>
 		</>
