@@ -1,9 +1,11 @@
 {
-	"lock": false,
+	"lock": true,
 	"nodeModulesDir": "auto",
 	"tasks": {
-		"dev": "deno run --watch=src --allow-all ./src/index.ts --no-cache",
-		"start": "deno run --allow-all ./src/index.ts"
+		"dev": "deno run --watch=src --allow-all --node-modules-dir=auto ./src/index.ts --no-cache",
+		"start": "deno run --allow-all --node-modules-dir=auto ./src/index.ts",
+		"install": "deno install --node-modules-dir=auto",
+		"cache": "deno cache --node-modules-dir=auto ./src/index.ts"
 	},
 
 	"imports": {
@@ -11,15 +13,23 @@
 		"@webtools/slick-client": "jsr:@webtools/slick-client@^0.3.0",
 		"@webtools/expressapi": "jsr:@webtools/expressapi@^0.8.1",
 
+		"preact": "npm:preact@^10.29.2",
+		"preact/hooks": "npm:preact@^10.29.2/hooks",
+		"preact/jsx-runtime": "npm:preact@^10.29.2/jsx-runtime",
 		"preact-root-fragment": "npm:preact-root-fragment@^0.3.1",
 		"@preact/signals": "npm:@preact/signals@^2.9.1",
-		"preact": "npm:preact@^10.29.2",
-		"shiki": "npm:shiki@^3.4.2"
+
+		"shiki": "npm:shiki@^3.23.0"
 	},
 
 	"compilerOptions": {
 		"jsxImportSource": "preact",
 		"jsx": "react-jsx"
+	},
+
+	"deploy": {
+		"install": "deno install --node-modules-dir=auto",
+		"build": "deno cache --node-modules-dir=auto ./src/index.ts"
 	},
 
 	"fmt": {
