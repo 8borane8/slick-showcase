@@ -24,8 +24,7 @@
 		"install": "npm install",
 		"runtime": {
 			"type": "dynamic",
-			"entrypoint": "./src/index.ts",
-			"memory_limit": 1024
+			"entrypoint": "./src/index.ts"
 		}
 	},
 
