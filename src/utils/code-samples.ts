@@ -82,6 +82,36 @@ export default {
   // …
 };`,
 	},
+	ssrFetch: {
+		lang: "tsx",
+		code: `import type { Page } from "@webtools/slick-server";
+
+export default {
+  url: "/weather",
+  template: "app",
+  title: "Weather",
+
+  body: async () => {
+    const res = await fetch("https://api.example.com/weather/paris");
+    const weather = await res.json();
+
+    return (
+      <article>
+        <h1>{weather.city}</h1>
+        <p class="temp">{weather.temp}°C</p>
+        <p>{weather.condition}</p>
+        <p>Humidity: {weather.humidity}%</p>
+      </article>
+    );
+  },
+
+  styles: [],
+  scripts: [],
+  head: null,
+  onpost: null,
+  onrequest: null,
+} satisfies Page;`,
+	},
 } as const;
 
 export type CodeSampleKey = keyof typeof SAMPLES;

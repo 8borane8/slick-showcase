@@ -6,6 +6,13 @@ import Counter from "../islands/Counter.tsx";
 
 const src = getIslandSources();
 
+const weather = {
+	city: "Paris",
+	temp: 22,
+	condition: "Sunny",
+	humidity: 41,
+};
+
 export default {
 	url: "/",
 	template: "app",
@@ -61,7 +68,7 @@ export default {
 						</div>
 					</div>
 
-					<div class="hero-terminal">
+					<div class="hero-terminal sticky-panel">
 						<CodeBlock filename="server.ts" html={getCodeSample("server")} />
 					</div>
 				</div>
@@ -128,6 +135,49 @@ export default {
 
 			<section class="section section-alt">
 				<div class="container">
+					<span class="section-label">SSR first</span>
+					<h2 class="section-title">Fetch on the server. Ship HTML, not a loading spinner.</h2>
+					<p class="section-desc">
+						<code>body</code>{" "}
+						accepts an async function: Slick awaits your data, renders Preact to HTML, and the browser
+						receives a complete page. No client-side waterfall.
+					</p>
+
+					<div class="grid-2 grid-2--wide ssr-demo-layout">
+						<CodeBlock filename="pages/weather.tsx" html={getCodeSample("ssrFetch")} />
+
+						<div class="sticky-panel">
+							<div class="ssr-preview">
+								<div class="demo-label">Server-rendered output</div>
+								<article class="ssr-preview-card">
+									<h3>{weather.city}</h3>
+									<p class="ssr-preview-temp">{weather.temp}°C</p>
+									<p class="ssr-preview-condition">{weather.condition}</p>
+									<dl class="ssr-preview-meta">
+										<div>
+											<dt>Humidity</dt>
+											<dd>{weather.humidity}%</dd>
+										</div>
+										<div>
+											<dt>Source</dt>
+											<dd>api.example.com/weather/paris</dd>
+										</div>
+									</dl>
+								</article>
+							</div>
+
+							<p class="ssr-rendered-at">
+								<span class="ssr-rendered-at-dot" aria-hidden="true" />
+								Server-rendered at{" "}
+								<time datetime={new Date().toISOString()}>{new Date().toISOString()}</time>
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="container">
 					<span class="section-label">Request flow</span>
 					<h2 class="section-title">Four steps. No magic strings.</h2>
 					<p class="section-desc">
@@ -159,7 +209,7 @@ export default {
 				</div>
 			</section>
 
-			<section class="section">
+			<section class="section section-alt">
 				<div class="container">
 					<span class="section-label">Live demo</span>
 					<h2 class="section-title">This site runs on Slick.</h2>
@@ -169,7 +219,7 @@ export default {
 					</p>
 
 					<div class="grid-2 grid-2--wide demo-layout">
-						<div class="demo-spotlight">
+						<div class="demo-spotlight sticky-panel">
 							<div class="demo-label">Hydrated island</div>
 							<Counter start={7} label="Request counter" codeHtml={src.Counter} />
 						</div>
@@ -179,7 +229,7 @@ export default {
 				</div>
 			</section>
 
-			<section class="section section-alt section--end">
+			<section class="section section--end">
 				<div class="container">
 					<span class="section-label">Quick start</span>
 					<h2 class="section-title">A real project layout.</h2>
