@@ -29,7 +29,12 @@
 
 	"deploy": {
 		"install": "deno install --node-modules-dir=auto",
-		"build": "deno cache --node-modules-dir=auto ./src/index.ts"
+		"build": "deno cache --node-modules-dir=auto ./src/index.ts",
+		"runtime": {
+			"type": "dynamic",
+			"entrypoint": "./src/index.ts",
+			"cwd": "."
+		}
 	},
 
 	"fmt": {

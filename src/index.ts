@@ -10,6 +10,7 @@ const app = new Slick(root, {
 		APP_NAME: "Slick",
 		APP_VERSION: "0.6.11",
 	},
+	port: Number(Deno.env.get("PORT") ?? 5000),
 	client: true,
 	noCache: Deno.args.includes("--no-cache"),
 });
